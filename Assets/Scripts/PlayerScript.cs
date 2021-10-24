@@ -132,7 +132,7 @@ public class PlayerScript : MonoBehaviour
     void SetLives()
     {
         lives.text = "Lives: " + livesValue.ToString();
-        if (livesValue == 0)
+        if (livesValue == 0 && GameOver == false)
         {
             loseText.text = "YOU LOSE!!";
             createdBy.text = "Created by: Hallie Richardson";
