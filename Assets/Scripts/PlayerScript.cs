@@ -52,10 +52,7 @@ public class PlayerScript : MonoBehaviour
         float hozMovement = Input.GetAxis("Horizontal");
         float vertMovement = Input.GetAxis("Vertical");
         rd2d.AddForce(new Vector2(hozMovement * speed, vertMovement * speed));
-        if (Input.GetKeyDown("escape"))
-        {
-            Application.Quit();
-        }
+        
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             anim.SetBool("IsRunning", true);
@@ -72,6 +69,11 @@ public class PlayerScript : MonoBehaviour
         else if (facingRight == true && hozMovement < 0)
         {
             Flip();
+        }
+
+        if (Input.GetKeyDown("escape"))
+        {
+            Application.Quit();
         }
     }
 
